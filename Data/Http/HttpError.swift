@@ -1,5 +1,5 @@
 //
-//  HttpPostCLient.swift
+//  HttpError.swift
 //  Data
 //
 //  Created by Yannes Meneguelli on 08/04/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol HttpPostClient {
-    func post(to url:URL, with data:Data?,completion: @escaping(HttpError) -> Void )
+public enum HttpError: Error{
+    case noConnectivity
 }
