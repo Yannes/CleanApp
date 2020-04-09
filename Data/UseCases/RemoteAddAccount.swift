@@ -9,7 +9,9 @@
 import Foundation
 import Domain
 
-public final class RemoteAddAccount{
+public final class RemoteAddAccount: AddAccount{
+
+    
     
     private let url: URL
     private let httpclient: HttpPostClient
@@ -21,9 +23,9 @@ public final class RemoteAddAccount{
         self.httpclient = httpClient
     }
     
-    public  func add(addAccountModel: AddAccountModel, completion:@escaping (DomainError) -> Void) {
+    public  func add(addAccountModel: AddAccountModel, completion:@escaping (Result<AccountModel,DomainError>) -> Void) {
         httpclient.post(to: url, with: addAccountModel.toData()) { error in
-            completion(.unexpected)
+            completion(.failure(.unexpected))
         }
     }
 }
