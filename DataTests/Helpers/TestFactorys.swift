@@ -13,6 +13,12 @@ func makeUrl() -> URL{
     return URL(string: "https://any-url.com")!
 }
 
+
+func makeValidData() -> Data{
+    return Data("{\"name\":\"Yannes\"}".utf8)
+}
+
+
 func makeInvalidData() -> Data{
     return Data("invalid_data".utf8)
 }
