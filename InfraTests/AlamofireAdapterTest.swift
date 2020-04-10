@@ -41,9 +41,6 @@ class AlamofireAdapterTest: XCTestCase {
         }
     }
     
-    
-    
-    
     func test_post_should_make_request_with_no_data() throws {
         testRequestFor(data: nil) { request in
              XCTAssertNil(request.httpBodyStream)
@@ -54,11 +51,13 @@ class AlamofireAdapterTest: XCTestCase {
 
 extension AlamofireAdapterTest{
     
-    func makeSut() -> AlamofireAdapter{
+    func makeSut(file: StaticString = #file, line: UInt = #line) -> AlamofireAdapter{
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [UrlProtocolStub.self]
         let session = Session(configuration:configuration)
-        return AlamofireAdapter(session: session)
+        let sut = AlamofireAdapter(session: session)
+        checkMemoryLeak(for: sut, file: file, line: line)
+        return sut
     }
     
     
