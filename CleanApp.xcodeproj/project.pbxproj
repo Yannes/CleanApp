@@ -30,6 +30,7 @@
 		A655FF692440D80B00B927B3 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
 		A655FF6A2440D81000B927B3 /* TestFactorys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF40244017F300B927B3 /* TestFactorys.swift */; };
 		A655FF702440D8BB00B927B3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A655FF6F2440D8BB00B927B3 /* Alamofire */; };
+		A655FF7224423A1000B927B3 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF7124423A1000B927B3 /* AlamofireAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		A655FF542440CAD200B927B3 /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A655FF592440CAD200B927B3 /* AlamofireAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTest.swift; sourceTree = "<group>"; };
 		A655FF5B2440CAD200B927B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A655FF7124423A1000B927B3 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 		A655FF4D2440CAD200B927B3 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				A655FF7324423A9500B927B3 /* Http */,
 				A655FF4F2440CAD200B927B3 /* Info.plist */,
 			);
 			path = Infra;
@@ -315,6 +318,14 @@
 				A655FF5B2440CAD200B927B3 /* Info.plist */,
 			);
 			path = InfraTests;
+			sourceTree = "<group>";
+		};
+		A655FF7324423A9500B927B3 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				A655FF7124423A1000B927B3 /* AlamofireAdapter.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +477,7 @@
 					};
 					A655FF4B2440CAD200B927B3 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 					A655FF532440CAD200B927B3 = {
 						CreatedOnToolsVersion = 11.4;
@@ -574,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A655FF7224423A1000B927B3 /* AlamofireAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +901,7 @@
 		A655FF5D2440CAD200B927B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -907,6 +921,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -914,6 +929,7 @@
 		A655FF5E2440CAD200B927B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -940,6 +956,7 @@
 		A655FF5F2440CAD200B927B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9P8XGQ8AX9;
@@ -960,6 +977,7 @@
 		A655FF602440CAD200B927B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9P8XGQ8AX9;
