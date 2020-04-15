@@ -34,4 +34,22 @@ class UseCasesIntegrationTests: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
 
+    
+    func test_add_account_failure() throws {
+          let alamofireAdapter = AlamofireAdapter()
+          let url = URL(string: "https://clean-node-api.herokuapp.com/api/signup")!
+          let sut = RemoteAddAccount(url: url, httpClient: alamofireAdapter)
+          let addAccountModel = AddAccountModel(name: "Yannes Meneguelli", email: "yannes_meneguelli@hotmail.com", password: "secret", passwordConfirmation: "secret2")
+          
+          let exp = expectation(description: "Waiting")
+          
+          sut.add(addAccountModel: addAccountModel) { result in
+              switch result{
+              case .failure(let error): XCTAssertEqual(error,.unexpected)
+              case .success:XCTFail("Expected sucess got \(result) instead")
+              }
+              exp.fulfill()
+          }
+          wait(for: [exp], timeout: 5)
+      }  
 }
