@@ -24,25 +24,33 @@ class SignUpPresenter {
     
     
     func signUp(viewModel: SignUpViewModel){
+        if let message = validate(viewModel: viewModel){
+           alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: message))
+        }
+    }
+        
+    
+    private func validate(viewModel: SignUpViewModel) -> String?{
         if viewModel.name == nil ||  viewModel.name!.isEmpty {
-            alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: "O Campo Nome é Obrigatorio"))
+            return "O Campo Nome é Obrigatorio"
         }
         
         if viewModel.email == nil ||  viewModel.email!.isEmpty {
-            alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: "O Campo Email é Obrigatorio"))
+            return "O Campo Email é Obrigatorio"
         }
         
         if viewModel.password == nil ||  viewModel.password!.isEmpty {
-            alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: "O Campo Senha é Obrigatorio"))
+            return "O Campo Senha é Obrigatorio"
         }
         
         
         if viewModel.passwordConfirmation == nil ||  viewModel.passwordConfirmation!.isEmpty {
-                  alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: "O Campo Confirmar Senha é Obrigatorio"))
-              }
-        
+            return "O Campo Confirmar Senha é Obrigatorio"
+        }
+        return nil
     }
-        
+    
+    
     
 }
 
@@ -96,7 +104,6 @@ class SingnUpPresenterTest: XCTestCase {
         sut.signUp(viewModel: signupViewModel)
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title:"Falha na validação",message:"O Campo Confirmar Senha é Obrigatorio"))
     }
-    
 }
 
 
