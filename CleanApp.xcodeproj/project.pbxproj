@@ -38,6 +38,7 @@
 		A6BF7DAF2447A79600D23903 /* SingnUpPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DAE2447A79600D23903 /* SingnUpPresenterTest.swift */; };
 		A6BF7DB92447B1BC00D23903 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DB82447B1BC00D23903 /* SignUpPresenter.swift */; };
 		A6BF7DBE2447B28600D23903 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DBD2447B28600D23903 /* AlertView.swift */; };
+		A6BF7DC72447E9F200D23903 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DC62447E9F200D23903 /* EmailValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		A6BF7DB02447A79600D23903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6BF7DB82447B1BC00D23903 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		A6BF7DBD2447B28600D23903 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		A6BF7DC62447E9F200D23903 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -475,6 +477,7 @@
 		A6BF7DC32447D4A800D23903 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
+				A6BF7DC62447E9F200D23903 /* EmailValidator.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 			files = (
 				A6BF7DB92447B1BC00D23903 /* SignUpPresenter.swift in Sources */,
 				A6BF7DBE2447B28600D23903 /* AlertView.swift in Sources */,
+				A6BF7DC72447E9F200D23903 /* EmailValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
