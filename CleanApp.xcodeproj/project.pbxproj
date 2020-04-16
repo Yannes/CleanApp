@@ -36,6 +36,8 @@
 		A6BF7D922447992300D23903 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63783E8243E51BE005B7BFF /* Data.framework */; };
 		A6BF7DAA2447A79600D23903 /* PresentationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7DA12447A79500D23903 /* PresentationLayer.framework */; };
 		A6BF7DAF2447A79600D23903 /* SingnUpPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DAE2447A79600D23903 /* SingnUpPresenterTest.swift */; };
+		A6BF7DB92447B1BC00D23903 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DB82447B1BC00D23903 /* SignUpPresenter.swift */; };
+		A6BF7DBE2447B28600D23903 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DBD2447B28600D23903 /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A6BF7DA02447A79500D23903;
 			remoteInfo = PresentationLayer;
+		};
+		A6BF7DBA2447B1ED00D23903 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A63783BE243E4C9A005B7BFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A63783D6243E4D4F005B7BFF;
+			remoteInfo = Domain;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -157,6 +166,8 @@
 		A6BF7DA92447A79600D23903 /* PresentationLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BF7DAE2447A79600D23903 /* SingnUpPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingnUpPresenterTest.swift; sourceTree = "<group>"; };
 		A6BF7DB02447A79600D23903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6BF7DB82447B1BC00D23903 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		A6BF7DBD2447B28600D23903 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +431,9 @@
 		A6BF7DA22447A79600D23903 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				A6BF7DC32447D4A800D23903 /* Validators */,
+				A6BF7DBC2447B27200D23903 /* Views */,
+				A6BF7DBF2447B2B200D23903 /* Presenter */,
 				A6BF7DA42447A79600D23903 /* Info.plist */,
 			);
 			path = PresentationLayer;
@@ -428,10 +442,41 @@
 		A6BF7DAD2447A79600D23903 /* PresentationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6BF7DAE2447A79600D23903 /* SingnUpPresenterTest.swift */,
+				A6BF7DC02447B41900D23903 /* Presenters */,
 				A6BF7DB02447A79600D23903 /* Info.plist */,
 			);
 			path = PresentationLayerTests;
+			sourceTree = "<group>";
+		};
+		A6BF7DBC2447B27200D23903 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6BF7DBD2447B28600D23903 /* AlertView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A6BF7DBF2447B2B200D23903 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A6BF7DB82447B1BC00D23903 /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A6BF7DC02447B41900D23903 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				A6BF7DAE2447A79600D23903 /* SingnUpPresenterTest.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		A6BF7DC32447D4A800D23903 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,6 +644,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A6BF7DBB2447B1ED00D23903 /* PBXTargetDependency */,
 			);
 			name = PresentationLayer;
 			productName = PresentationLayer;
@@ -656,6 +702,7 @@
 					};
 					A6BF7DA02447A79500D23903 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 					A6BF7DA82447A79600D23903 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -815,6 +862,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6BF7DB92447B1BC00D23903 /* SignUpPresenter.swift in Sources */,
+				A6BF7DBE2447B28600D23903 /* AlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +917,11 @@
 			isa = PBXTargetDependency;
 			target = A6BF7DA02447A79500D23903 /* PresentationLayer */;
 			targetProxy = A6BF7DAB2447A79600D23903 /* PBXContainerItemProxy */;
+		};
+		A6BF7DBB2447B1ED00D23903 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A63783D6243E4D4F005B7BFF /* Domain */;
+			targetProxy = A6BF7DBA2447B1ED00D23903 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1284,6 +1338,7 @@
 		A6BF7DB32447A79600D23903 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1303,6 +1358,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1310,6 +1366,7 @@
 		A6BF7DB42447A79600D23903 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1336,6 +1393,7 @@
 		A6BF7DB62447A79600D23903 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9P8XGQ8AX9;
@@ -1356,6 +1414,7 @@
 		A6BF7DB72447A79600D23903 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9P8XGQ8AX9;
