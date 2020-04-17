@@ -123,7 +123,12 @@ class SingnUpPresenterTest: XCTestCase {
         
     }
     
-    
+    func test_signup_should_show_loading_if_before_add_account() throws {
+           let loadViewSpy = LoadingViewSpy()
+           let sut = makeSut(loadingView: loadViewSpy)
+           sut.signUp(viewModel: makesignUpViewModel())
+           XCTAssertEqual(loadViewSpy.viewModel,LoadingViewModel(isLoading: true))
+       }
     
     
     
@@ -132,8 +137,8 @@ class SingnUpPresenterTest: XCTestCase {
 
 extension SingnUpPresenterTest{
     
-    func makeSut(alertView: AlertViewSpy = AlertViewSpy() , emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount: AddAccountSpy = AddAccountSpy(),file: StaticString = #file, line: UInt = #line) -> SignUpPresenter{
-        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount)
+    func makeSut(alertView: AlertViewSpy = AlertViewSpy() , emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount: AddAccountSpy = AddAccountSpy(),loadingView: LoadingViewSpy = LoadingViewSpy(),file: StaticString = #file, line: UInt = #line) -> SignUpPresenter{
+        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount, loadingView: loadingView)
         checkMemoryLeak2(for: sut,file: file , line: line)
         return (sut)
     }
@@ -224,4 +229,13 @@ class AddAccountSpy: AddAccount {
         completion?(.failure(error))
     }
     
+}
+
+
+
+class LoadingViewSpy: LoadingView {
+    var viewModel: LoadingViewModel?
+    func display(viewModel: LoadingViewModel) {
+        self.viewModel = viewModel
+    }
 }
