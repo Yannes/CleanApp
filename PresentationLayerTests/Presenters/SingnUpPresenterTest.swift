@@ -144,6 +144,26 @@ class SingnUpPresenterTest: XCTestCase {
     }
     
     
+    func test_signup_should_show_error_message_if_addAccount_succeeds() throws {
+          let alertViewspy = AlertViewSpy()
+          let addAccountSpy = AddAccountSpy()
+          let sut = makeSut(alertView: alertViewspy,addAccount: addAccountSpy)
+          let exp = expectation(description: "Waiting")
+          alertViewspy.observe { [weak self]viewModel in
+            XCTAssertEqual(viewModel,self?.makeSuccessAlertViewModel(message: "Conta criada com sucesso."))
+              exp.fulfill()
+          }
+          sut.signUp(viewModel: makesignUpViewModel())
+        addAccountSpy.completeWithAccount(makeAccountModel())
+          wait(for: [exp], timeout: 1)
+          
+      }
+    
+    
+    
+    
+    
+    
     
 }
 
@@ -181,12 +201,21 @@ extension SingnUpPresenterTest{
     }
     
     
+    func makeSuccessAlertViewModel(message:String) ->AlertViewModel{
+           return AlertViewModel(title:"Sucesso",message: message)
+    }
+       
+    
     func checkMemoryLeak2(for instance: AnyObject, file: StaticString = #file, line: UInt = #line){
         addTeardownBlock {[weak instance ] in
             XCTAssertNil(instance,file: file , line: line)
         }
     }
     
+    func makeAccountModel() -> AccountModel{
+       return AccountModel(id: "any_account", name: "Any_name", email: "any_email@hotmail.com", password: "any_password")
+    }
+
     
 }
 
@@ -241,6 +270,13 @@ class AddAccountSpy: AddAccount {
     func completeWithError(_ error:DomainError){
         completion?(.failure(error))
     }
+    
+    
+    
+    func completeWithAccount(_ account: AccountModel){
+        completion?(.success(account))
+    }
+    
     
 }
 
