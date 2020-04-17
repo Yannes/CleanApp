@@ -16,8 +16,8 @@ class SingnUpPresenterTest: XCTestCase {
         let alertViewspy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewspy)
         let exp = expectation(description: "Waiting")
-        alertViewspy.observe { [weak self]viewModel in
-            XCTAssertEqual(viewModel, self?.makeRequiredAlertViewModel(fieldName: "Nome"))
+        alertViewspy.observe { viewModel in
+            XCTAssertEqual(viewModel,makeRequiredAlertViewModel(fieldName: "Nome"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makesignUpViewModel(name: nil))
@@ -28,8 +28,8 @@ class SingnUpPresenterTest: XCTestCase {
         let alertViewspy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewspy)
         let exp = expectation(description: "Waiting")
-        alertViewspy.observe { [weak self]viewModel in
-            XCTAssertEqual(viewModel, self?.makeRequiredAlertViewModel(fieldName: "Email"))
+        alertViewspy.observe { viewModel in
+            XCTAssertEqual(viewModel,makeRequiredAlertViewModel(fieldName: "Email"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makesignUpViewModel(email: nil))
@@ -41,8 +41,8 @@ class SingnUpPresenterTest: XCTestCase {
         let alertViewspy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewspy)
         let exp = expectation(description: "Waiting")
-        alertViewspy.observe { [weak self]viewModel in
-            XCTAssertEqual(viewModel, self?.makeRequiredAlertViewModel(fieldName: "Senha"))
+        alertViewspy.observe { viewModel in
+            XCTAssertEqual(viewModel, makeRequiredAlertViewModel(fieldName: "Senha"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makesignUpViewModel(password: nil))
@@ -53,8 +53,8 @@ class SingnUpPresenterTest: XCTestCase {
         let alertViewspy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewspy)
         let exp = expectation(description: "Waiting")
-        alertViewspy.observe { [weak self]viewModel in
-            XCTAssertEqual(viewModel, self?.makeRequiredAlertViewModel(fieldName: "Confirmar Senha"))
+        alertViewspy.observe { viewModel in
+            XCTAssertEqual(viewModel, makeRequiredAlertViewModel(fieldName: "Confirmar Senha"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makesignUpViewModel(passwordConfirm:nil))
@@ -66,8 +66,8 @@ class SingnUpPresenterTest: XCTestCase {
         let alertViewspy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewspy)
         let exp = expectation(description: "Waiting")
-        alertViewspy.observe { [weak self]viewModel in
-            XCTAssertEqual(viewModel, self?.makeInvalidAlertViewModel(fieldName: "Confirmar Senha"))
+        alertViewspy.observe {viewModel in
+            XCTAssertEqual(viewModel,makeInvalidAlertViewModel(fieldName: "Confirmar Senha"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makesignUpViewModel(passwordConfirm:"wrong_pass"))
@@ -81,8 +81,8 @@ class SingnUpPresenterTest: XCTestCase {
         let emailValidatorSpy = EmailValidatorSpy()
         let sut = makeSut(alertView: alertViewspy,emailValidator: emailValidatorSpy)
         let exp = expectation(description: "Waiting")
-        alertViewspy.observe { [weak self]viewModel in
-            XCTAssertEqual(viewModel, self?.makeInvalidAlertViewModel(fieldName: "Email"))
+        alertViewspy.observe { viewModel in
+            XCTAssertEqual(viewModel, makeInvalidAlertViewModel(fieldName: "Email"))
             exp.fulfill()
         }
         emailValidatorSpy.simulateInvalidEmail()
@@ -113,8 +113,8 @@ class SingnUpPresenterTest: XCTestCase {
         let addAccountSpy = AddAccountSpy()
         let sut = makeSut(alertView: alertViewspy,addAccount: addAccountSpy)
         let exp = expectation(description: "Waiting")
-        alertViewspy.observe { [weak self]viewModel in
-            XCTAssertEqual(viewModel,self?.makeErrorAlertViewModel(message: "Algo de inesperado aconteceu tente novamente em alguns instantes"))
+        alertViewspy.observe {viewModel in
+            XCTAssertEqual(viewModel,makeErrorAlertViewModel(message: "Algo de inesperado aconteceu tente novamente em alguns instantes"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makesignUpViewModel())
@@ -149,8 +149,8 @@ class SingnUpPresenterTest: XCTestCase {
           let addAccountSpy = AddAccountSpy()
           let sut = makeSut(alertView: alertViewspy,addAccount: addAccountSpy)
           let exp = expectation(description: "Waiting")
-          alertViewspy.observe { [weak self]viewModel in
-            XCTAssertEqual(viewModel,self?.makeSuccessAlertViewModel(message: "Conta criada com sucesso."))
+          alertViewspy.observe {viewModel in
+            XCTAssertEqual(viewModel,makeSuccessAlertViewModel(message: "Conta criada com sucesso."))
               exp.fulfill()
           }
           sut.signUp(viewModel: makesignUpViewModel())
@@ -160,11 +160,12 @@ class SingnUpPresenterTest: XCTestCase {
       }
     
     
-    
-    
-    
-    
-    
+
+    func checkMemoryLeak2(for instance: AnyObject, file: StaticString = #file, line: UInt = #line){
+        addTeardownBlock {[weak instance ] in
+            XCTAssertNil(instance,file: file , line: line)
+        }
+    }
 }
 
 
@@ -176,121 +177,5 @@ extension SingnUpPresenterTest{
         return (sut)
     }
     
-    
-    func makesignUpViewModel(name:String? = "any_name",email:String? = "any_email@email.com",password:String? = "any_pass",passwordConfirm:String? = "any_pass") -> SignUpViewModel{
-        return SignUpViewModel(name: name, email: email, password: password, passwordConfirm: passwordConfirm)
-    }
-    
-    
-    
-    func makeRequiredAlertViewModel(fieldName:String) ->AlertViewModel{
-        return AlertViewModel(title:"Falha na validação",message:"O Campo \(fieldName) é Obrigatorio")
-    }
-    
-    func makeInvalidAlertViewModel(fieldName:String) ->AlertViewModel{
-        return AlertViewModel(title:"Falha na validação",message:"O Campo \(fieldName) é invalido")
-    }
-    
-    func makeAddAccountModel() -> AddAccountModel{
-        return AddAccountModel(name: "any_name", email: "any_email@email.com", password: "any_pass", passwordConfirmation: "any_pass")
-    }
-    
-    
-    func makeErrorAlertViewModel(message:String) ->AlertViewModel{
-        return AlertViewModel(title:"Erro",message: message)
-    }
-    
-    
-    func makeSuccessAlertViewModel(message:String) ->AlertViewModel{
-           return AlertViewModel(title:"Sucesso",message: message)
-    }
-       
-    
-    func checkMemoryLeak2(for instance: AnyObject, file: StaticString = #file, line: UInt = #line){
-        addTeardownBlock {[weak instance ] in
-            XCTAssertNil(instance,file: file , line: line)
-        }
-    }
-    
-    func makeAccountModel() -> AccountModel{
-       return AccountModel(id: "any_account", name: "Any_name", email: "any_email@hotmail.com", password: "any_password")
-    }
-
-    
 }
 
-
-class AlertViewSpy: AlertView {
-    
-    var emit: ((AlertViewModel)->Void)?
-    
-    
-    func observe(completion: @escaping(AlertViewModel)->Void){
-        self.emit = completion
-    }
-    
-    func showMessage(viewModel: AlertViewModel) {
-        self.emit?(viewModel)
-    }
-}
-
-
-class EmailValidatorSpy: EmailValidator{
-    var isvalid = true
-    var email:String?
-    
-    func isValid(email:String) ->Bool{
-        self.email = email
-        return isvalid
-    }
-    
-    func simulateInvalidEmail(){
-        isvalid = false
-    }
-    
-    
-    
-}
-
-
-
-
-
-class AddAccountSpy: AddAccount {
-    
-    var addAccountModel: AddAccountModel?
-    var completion: ((Result<AccountModel, DomainError>) -> Void)?
-    
-    func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
-        self.addAccountModel = addAccountModel
-        self.completion = completion
-    }
-    
-    
-    func completeWithError(_ error:DomainError){
-        completion?(.failure(error))
-    }
-    
-    
-    
-    func completeWithAccount(_ account: AccountModel){
-        completion?(.success(account))
-    }
-    
-    
-}
-
-
-
-class LoadingViewSpy: LoadingView {
-    
-    var emit: ((LoadingViewModel)->Void)?
-      
-    func observe(completion: @escaping(LoadingViewModel)->Void){
-          self.emit = completion
-      }
-
-    func display(viewModel: LoadingViewModel) {
-        self.emit?(viewModel)
-    }
-}
