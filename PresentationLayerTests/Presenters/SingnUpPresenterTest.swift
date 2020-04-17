@@ -8,6 +8,7 @@
 
 import XCTest
 import PresentationLayer
+import Domain
 
 class SingnUpPresenterTest: XCTestCase {
     
@@ -68,13 +69,21 @@ class SingnUpPresenterTest: XCTestCase {
         XCTAssertEqual(emailValidatorSpy.email, signupViewModel.email)
     }
 
+    
+    func test_signup_should_call_addaccount_with_correct_values() throws {
+           let addAccountSpy = AddAccountSpy()
+           let sut = makeSut(addAccount:addAccountSpy)
+           sut.signUp(viewModel: makesignUpViewModel())
+           XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel() )
+    }
+
 }
 
 
 extension SingnUpPresenterTest{
     
-    func makeSut(alertView: AlertViewSpy = AlertViewSpy() , emailValidator:EmailValidatorSpy = EmailValidatorSpy()) -> SignUpPresenter{
-        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
+    func makeSut(alertView: AlertViewSpy = AlertViewSpy() , emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount: AddAccountSpy = AddAccountSpy()) -> SignUpPresenter{
+        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount)
         return (sut)
     }
     
@@ -92,6 +101,12 @@ extension SingnUpPresenterTest{
     func makeInvalidAlertViewModel(fieldName:String) ->AlertViewModel{
         return AlertViewModel(title:"Falha na validação",message:"O Campo \(fieldName) é invalido")
     }
+    
+    public func makeAddAccountModel() -> AddAccountModel{
+        return AddAccountModel(name: "any_name", email: "any_email@email.com", password: "any_pass", passwordConfirmation: "any_pass")
+    }
+     
+
     
     
     class AlertViewSpy: AlertView {
@@ -121,3 +136,15 @@ extension SingnUpPresenterTest{
     
 }
 
+
+
+class AddAccountSpy: AddAccount {
+    
+    var addAccountModel: AddAccountModel?
+    
+    func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+        self.addAccountModel = addAccountModel
+    }
+    
+    
+}

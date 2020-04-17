@@ -12,3 +12,10 @@ import Domain
 func makeAccountModel() -> AccountModel{
     return AccountModel(id: "any_account", name: "Any_name", email: "any_email@hotmail.com", password: "any_password")
  }
+
+
+
+ func makeAddAccountModel() -> AddAccountModel{
+    return AddAccountModel(name: "any_name", email: "any_email@hotmail.com", password: "any_password", passwordConfirmation: "any_password")
+}
+ 
