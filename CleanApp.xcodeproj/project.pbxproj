@@ -49,6 +49,8 @@
 		A6BF7DDD244A689200D23903 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DDC244A689200D23903 /* TestFactories.swift */; };
 		A6BF7DEC244A6AA400D23903 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7DE3244A6AA400D23903 /* UI.framework */; };
 		A6BF7DF1244A6AA400D23903 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DF0244A6AA400D23903 /* SignUpViewControllerTests.swift */; };
+		A6BF7DFA244A6CBD00D23903 /* PresentationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7DA12447A79500D23903 /* PresentationLayer.framework */; };
+		A6BF7DFB244A6CBD00D23903 /* PresentationLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7DA12447A79500D23903 /* PresentationLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,13 @@
 			remoteGlobalIDString = A6BF7DE2244A6AA400D23903;
 			remoteInfo = UI;
 		};
+		A6BF7DFC244A6CBD00D23903 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A63783BE243E4C9A005B7BFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6BF7DA02447A79500D23903;
+			remoteInfo = PresentationLayer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +152,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A655FF642440CBE500B927B3 /* Data.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6BF7DFE244A6CBD00D23903 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A6BF7DFB244A6CBD00D23903 /* PresentationLayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +290,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6BF7DFA244A6CBD00D23903 /* PresentationLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,10 +830,12 @@
 				A6BF7DDF244A6AA400D23903 /* Sources */,
 				A6BF7DE0244A6AA400D23903 /* Frameworks */,
 				A6BF7DE1244A6AA400D23903 /* Resources */,
+				A6BF7DFE244A6CBD00D23903 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A6BF7DFD244A6CBD00D23903 /* PBXTargetDependency */,
 			);
 			name = UI;
 			productName = UI;
@@ -1142,6 +1165,11 @@
 			target = A6BF7DE2244A6AA400D23903 /* UI */;
 			targetProxy = A6BF7DED244A6AA400D23903 /* PBXContainerItemProxy */;
 		};
+		A6BF7DFD244A6CBD00D23903 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6BF7DA02447A79500D23903 /* PresentationLayer */;
+			targetProxy = A6BF7DFC244A6CBD00D23903 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -1288,6 +1316,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1316,6 +1345,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1343,6 +1373,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1371,6 +1402,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1392,6 +1424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.DataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1413,6 +1446,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.DataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1440,6 +1474,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1468,6 +1503,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1489,6 +1525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.InfraTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1510,6 +1547,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.InfraTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1530,6 +1568,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.UseCasesIntegrationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1550,6 +1589,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.UseCasesIntegrationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1577,6 +1617,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1605,6 +1646,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1626,6 +1668,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.PresentationLayerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos macosx iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1647,6 +1690,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.PresentationLayerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos macosx iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1670,6 +1714,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.UI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1694,6 +1739,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.UI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1712,6 +1758,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1730,6 +1777,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
