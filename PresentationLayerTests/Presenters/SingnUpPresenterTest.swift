@@ -98,13 +98,13 @@ class SingnUpPresenterTest: XCTestCase {
         sut.signUp(viewModel: signupViewModel)
         XCTAssertEqual(emailValidatorSpy.email, signupViewModel.email)
     }
-
+    
     
     func test_signup_should_call_addaccount_with_correct_values() throws {
-           let addAccountSpy = AddAccountSpy()
-           let sut = makeSut(addAccount:addAccountSpy)
-           sut.signUp(viewModel: makesignUpViewModel())
-           XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel() )
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(addAccount:addAccountSpy)
+        sut.signUp(viewModel: makesignUpViewModel())
+        XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel() )
     }
     
     
@@ -126,14 +126,15 @@ class SingnUpPresenterTest: XCTestCase {
     
     
     
-
+    
 }
 
 
 extension SingnUpPresenterTest{
     
-    func makeSut(alertView: AlertViewSpy = AlertViewSpy() , emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount: AddAccountSpy = AddAccountSpy()) -> SignUpPresenter{
+    func makeSut(alertView: AlertViewSpy = AlertViewSpy() , emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount: AddAccountSpy = AddAccountSpy(),file: StaticString = #file, line: UInt = #line) -> SignUpPresenter{
         let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount)
+        checkMemoryLeak2(for: sut,file: file , line: line)
         return (sut)
     }
     
@@ -152,50 +153,59 @@ extension SingnUpPresenterTest{
         return AlertViewModel(title:"Falha na validação",message:"O Campo \(fieldName) é invalido")
     }
     
-    public func makeAddAccountModel() -> AddAccountModel{
+    func makeAddAccountModel() -> AddAccountModel{
         return AddAccountModel(name: "any_name", email: "any_email@email.com", password: "any_pass", passwordConfirmation: "any_pass")
     }
-     
+    
     
     func makeErrorAlertViewModel(message:String) ->AlertViewModel{
         return AlertViewModel(title:"Erro",message: message)
     }
     
     
-    
-    class AlertViewSpy: AlertView {
-    
-        var emit: ((AlertViewModel)->Void)?
-        
-        
-        func observe(completion: @escaping(AlertViewModel)->Void){
-            self.emit = completion
-        }
-        
-        func showMessage(viewModel: AlertViewModel) {
-            self.emit?(viewModel)
+    func checkMemoryLeak2(for instance: AnyObject, file: StaticString = #file, line: UInt = #line){
+        addTeardownBlock {[weak instance ] in
+            XCTAssertNil(instance,file: file , line: line)
         }
     }
     
-     
-    class EmailValidatorSpy: EmailValidator{
-        var isvalid = true
-        var email:String?
-        
-        func isValid(email:String) ->Bool{
-            self.email = email
-            return isvalid
-        }
-        
-        func simulateInvalidEmail(){
-            isvalid = false
-        }
-        
-        
-        
-    }
     
 }
+
+
+class AlertViewSpy: AlertView {
+    
+    var emit: ((AlertViewModel)->Void)?
+    
+    
+    func observe(completion: @escaping(AlertViewModel)->Void){
+        self.emit = completion
+    }
+    
+    func showMessage(viewModel: AlertViewModel) {
+        self.emit?(viewModel)
+    }
+}
+
+
+class EmailValidatorSpy: EmailValidator{
+    var isvalid = true
+    var email:String?
+    
+    func isValid(email:String) ->Bool{
+        self.email = email
+        return isvalid
+    }
+    
+    func simulateInvalidEmail(){
+        isvalid = false
+    }
+    
+    
+    
+}
+
+
 
 
 
