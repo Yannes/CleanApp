@@ -11,7 +11,7 @@ import UIKit
 import PresentationLayer
 
 
-final class SignUpViewController:UIViewController {
+final class SignUpViewController:UIViewController, StoryBoarderded {
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var saveButton: UIButton!
@@ -31,8 +31,10 @@ final class SignUpViewController:UIViewController {
     private func configure(){
         saveButton?.layer.cornerRadius = 5
         saveButton?.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        hideKeyBoardOnTap()
     }
     
+
     
     @objc private func saveButtonTapped(){
         let viewModel = SignUpViewModel(name: nameTextField.text, email: emailTExtField.text, password: senhaTextField.text, passwordConfirm: confirmarSenhaTextField.text)
@@ -46,8 +48,11 @@ final class SignUpViewController:UIViewController {
 extension SignUpViewController: LoadingView{
     func display(viewModel: LoadingViewModel) {
         if viewModel.isLoading {
+            view.isUserInteractionEnabled = false
             loadingIndicator.startAnimating()
+            
         }else{
+            view.isUserInteractionEnabled = true
             loadingIndicator.stopAnimating()
         }
     }
