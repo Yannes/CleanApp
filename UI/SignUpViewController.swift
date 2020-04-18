@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PresentationLayer
 
 
 final class SignUpViewController:UIViewController {
@@ -18,4 +19,15 @@ final class SignUpViewController:UIViewController {
         super.viewDidLoad()
     }
     
+}
+
+
+extension SignUpViewController: LoadingView{
+    func display(viewModel: LoadingViewModel) {
+        if viewModel.isLoading {
+            loadingIndicator.startAnimating()
+        }else{
+            loadingIndicator.stopAnimating()
+        }
+    }
 }

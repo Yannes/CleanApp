@@ -9,6 +9,7 @@
 import XCTest
 import UIKit
 @testable import UI
+import PresentationLayer
 
 
 class SignUpViewControllerTests: XCTestCase {
@@ -21,6 +22,10 @@ class SignUpViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.loadingIndicator?.isAnimating, false)
     }
 
-
+    func test_sut_implements_lodingView() throws {
+        let sb = UIStoryboard(name: "SignUp", bundle: Bundle(for: SignUpViewController.self))
+        let sut = sb.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
+        XCTAssertNotNil(sut as LoadingView)
+    }
 
 }
