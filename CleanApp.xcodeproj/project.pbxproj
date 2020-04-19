@@ -16,6 +16,8 @@
 		A6378406243E7FC3005B7BFF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6378405243E7FC3005B7BFF /* Model.swift */; };
 		A6378408243E8059005B7BFF /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6378407243E8059005B7BFF /* RemoteAddAccount.swift */; };
 		A637840A243E809B005B7BFF /* HttpPostCLient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6378409243E809B005B7BFF /* HttpPostCLient.swift */; };
+		A6452913244CDB0200C1A47A /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452912244CDB0200C1A47A /* UseCaseFactory.swift */; };
+		A6452916244CDB8A00C1A47A /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452915244CDB8A00C1A47A /* SignUpComposer.swift */; };
 		A655FF37243E957E00B927B3 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF36243E957E00B927B3 /* DomainError.swift */; };
 		A655FF39243E981300B927B3 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF38243E981300B927B3 /* HttpError.swift */; };
 		A655FF3C243FFE4C00B927B3 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3B243FFE4C00B927B3 /* ExtensionHelpers.swift */; };
@@ -77,7 +79,7 @@
 		A6BF7E9A244C210100D23903 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7DE3244A6AA400D23903 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A6BF7E9D244C210100D23903 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7E42244C1B9E00D23903 /* Validation.framework */; };
 		A6BF7E9E244C210100D23903 /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7E42244C1B9E00D23903 /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A6BF7EA5244C217D00D23903 /* SingupFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7EA4244C217D00D23903 /* SingupFactory.swift */; };
+		A6BF7EA5244C217D00D23903 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7EA4244C217D00D23903 /* ControllerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,6 +301,8 @@
 		A6378405243E7FC3005B7BFF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A6378407243E8059005B7BFF /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		A6378409243E809B005B7BFF /* HttpPostCLient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostCLient.swift; sourceTree = "<group>"; };
+		A6452912244CDB0200C1A47A /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		A6452915244CDB8A00C1A47A /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
 		A655FF36243E957E00B927B3 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		A655FF38243E981300B927B3 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		A655FF3B243FFE4C00B927B3 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
@@ -356,7 +360,7 @@
 		A6BF7E74244C203000D23903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6BF7E79244C203000D23903 /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BF7E7F244C203000D23903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6BF7EA4244C217D00D23903 /* SingupFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingupFactory.swift; sourceTree = "<group>"; };
+		A6BF7EA4244C217D00D23903 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,6 +605,14 @@
 				A63783F5243E51BE005B7BFF /* RemoteAddAccountTest.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A6452914244CDB6F00C1A47A /* Composerers */ = {
+			isa = PBXGroup;
+			children = (
+				A6452915244CDB8A00C1A47A /* SignUpComposer.swift */,
+			);
+			path = Composerers;
 			sourceTree = "<group>";
 		};
 		A655FF35243E957000B927B3 /* Errors */ = {
@@ -880,6 +892,7 @@
 		A6BF7E65244C202E00D23903 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A6452914244CDB6F00C1A47A /* Composerers */,
 				A6BF7EA3244C216500D23903 /* Factories */,
 				A6BF7E66244C202E00D23903 /* AppDelegate.swift */,
 				A6BF7E68244C202E00D23903 /* SceneDelegate.swift */,
@@ -901,7 +914,8 @@
 		A6BF7EA3244C216500D23903 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				A6BF7EA4244C217D00D23903 /* SingupFactory.swift */,
+				A6BF7EA4244C217D00D23903 /* ControllerFactory.swift */,
+				A6452912244CDB0200C1A47A /* UseCaseFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1554,9 +1568,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6452913244CDB0200C1A47A /* UseCaseFactory.swift in Sources */,
 				A6BF7E67244C202E00D23903 /* AppDelegate.swift in Sources */,
+				A6452916244CDB8A00C1A47A /* SignUpComposer.swift in Sources */,
 				A6BF7E69244C202E00D23903 /* SceneDelegate.swift in Sources */,
-				A6BF7EA5244C217D00D23903 /* SingupFactory.swift in Sources */,
+				A6BF7EA5244C217D00D23903 /* ControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
