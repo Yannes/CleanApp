@@ -26,6 +26,7 @@
 		A6452920244CDEBB00C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
 		A6452922244CDF7D00C1A47A /* SignUpIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452921244CDF7D00C1A47A /* SignUpIntegrationTest.swift */; };
 		A6452924244CDFAE00C1A47A /* MainTests-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = A6452923244CDFAE00C1A47A /* MainTests-Bridging-Header.h */; };
+		A6452927244CF2C200C1A47A /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452926244CF2C200C1A47A /* WeakVarProxy.swift */; };
 		A655FF37243E957E00B927B3 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF36243E957E00B927B3 /* DomainError.swift */; };
 		A655FF39243E981300B927B3 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF38243E981300B927B3 /* HttpError.swift */; };
 		A655FF3C243FFE4C00B927B3 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3B243FFE4C00B927B3 /* ExtensionHelpers.swift */; };
@@ -313,6 +314,7 @@
 		A6452915244CDB8A00C1A47A /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
 		A6452921244CDF7D00C1A47A /* SignUpIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTest.swift; sourceTree = "<group>"; };
 		A6452923244CDFAE00C1A47A /* MainTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6452926244CF2C200C1A47A /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		A655FF36243E957E00B927B3 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		A655FF38243E981300B927B3 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		A655FF3B243FFE4C00B927B3 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
@@ -625,6 +627,14 @@
 			path = Composerers;
 			sourceTree = "<group>";
 		};
+		A6452925244CF2AA00C1A47A /* Proxys */ = {
+			isa = PBXGroup;
+			children = (
+				A6452926244CF2C200C1A47A /* WeakVarProxy.swift */,
+			);
+			path = Proxys;
+			sourceTree = "<group>";
+		};
 		A655FF35243E957000B927B3 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +912,7 @@
 		A6BF7E65244C202E00D23903 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A6452925244CF2AA00C1A47A /* Proxys */,
 				A6452914244CDB6F00C1A47A /* Composerers */,
 				A6BF7EA3244C216500D23903 /* Factories */,
 				A6BF7E66244C202E00D23903 /* AppDelegate.swift */,
@@ -1590,6 +1601,7 @@
 				A6BF7E67244C202E00D23903 /* AppDelegate.swift in Sources */,
 				A6452916244CDB8A00C1A47A /* SignUpComposer.swift in Sources */,
 				A6BF7E69244C202E00D23903 /* SceneDelegate.swift in Sources */,
+				A6452927244CF2C200C1A47A /* WeakVarProxy.swift in Sources */,
 				A6BF7EA5244C217D00D23903 /* ControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
