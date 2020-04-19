@@ -22,7 +22,6 @@ public final  class SignUpPresenter {
         self.emailValidator = emailValidator
         self.addAccount = addAccount
         self.loadingView = loadingView
-    
     }
     
     public   func signUp(viewModel: SignUpViewModel){
@@ -37,7 +36,6 @@ public final  class SignUpPresenter {
                     self.alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: "Algo de inesperado aconteceu tente novamente em alguns instantes"))
                 case .success:
                     self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Conta criada com sucesso."))
-                    
                 }
                self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
             }

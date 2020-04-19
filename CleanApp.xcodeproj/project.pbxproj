@@ -18,6 +18,14 @@
 		A637840A243E809B005B7BFF /* HttpPostCLient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6378409243E809B005B7BFF /* HttpPostCLient.swift */; };
 		A6452913244CDB0200C1A47A /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452912244CDB0200C1A47A /* UseCaseFactory.swift */; };
 		A6452916244CDB8A00C1A47A /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452915244CDB8A00C1A47A /* SignUpComposer.swift */; };
+		A645291A244CDE2D00C1A47A /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DD7244A66B300D23903 /* AddAccountSpy.swift */; };
+		A645291B244CDE8700C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
+		A645291D244CDEB600C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
+		A645291E244CDEB700C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
+		A645291F244CDEB900C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
+		A6452920244CDEBB00C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
+		A6452922244CDF7D00C1A47A /* SignUpIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452921244CDF7D00C1A47A /* SignUpIntegrationTest.swift */; };
+		A6452924244CDFAE00C1A47A /* MainTests-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = A6452923244CDFAE00C1A47A /* MainTests-Bridging-Header.h */; };
 		A655FF37243E957E00B927B3 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF36243E957E00B927B3 /* DomainError.swift */; };
 		A655FF39243E981300B927B3 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF38243E981300B927B3 /* HttpError.swift */; };
 		A655FF3C243FFE4C00B927B3 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3B243FFE4C00B927B3 /* ExtensionHelpers.swift */; };
@@ -303,6 +311,8 @@
 		A6378409243E809B005B7BFF /* HttpPostCLient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostCLient.swift; sourceTree = "<group>"; };
 		A6452912244CDB0200C1A47A /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		A6452915244CDB8A00C1A47A /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
+		A6452921244CDF7D00C1A47A /* SignUpIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTest.swift; sourceTree = "<group>"; };
+		A6452923244CDFAE00C1A47A /* MainTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A655FF36243E957E00B927B3 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		A655FF38243E981300B927B3 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		A655FF3B243FFE4C00B927B3 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
@@ -906,6 +916,8 @@
 		A6BF7E7C244C203000D23903 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
+				A6452923244CDFAE00C1A47A /* MainTests-Bridging-Header.h */,
+				A6452921244CDF7D00C1A47A /* SignUpIntegrationTest.swift */,
 				A6BF7E7F244C203000D23903 /* Info.plist */,
 			);
 			path = MainTests;
@@ -927,6 +939,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6452924244CDFAE00C1A47A /* MainTests-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1299,6 +1312,7 @@
 					};
 					A6BF7E78244C203000D23903 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 						TestTargetID = A6BF7E63244C202E00D23903;
 					};
 				};
@@ -1500,6 +1514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BF7D902447992300D23903 /* AddAccountIntegrationTest.swift in Sources */,
+				A645291F244CDEB900C1A47A /* TestExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1522,6 +1537,7 @@
 			files = (
 				A6BF7DDD244A689200D23903 /* TestFactories.swift in Sources */,
 				A6BF7DDA244A672A00D23903 /* LoadingViewSpy.swift in Sources */,
+				A645291D244CDEB600C1A47A /* TestExtension.swift in Sources */,
 				A6BF7DD8244A66B300D23903 /* AddAccountSpy.swift in Sources */,
 				A6BF7DD2244A664900D23903 /* AlertViewSpy.swift in Sources */,
 				A6BF7DD5244A667400D23903 /* EmailValidatorSpy.swift in Sources */,
@@ -1544,6 +1560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BF7DF1244A6AA400D23903 /* SignUpViewControllerTests.swift in Sources */,
+				A6452920244CDEBB00C1A47A /* TestExtension.swift in Sources */,
 				A6BF7E09244A9D3D00D23903 /* testExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1561,6 +1578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BF7E50244C1B9F00D23903 /* EmailValidatorAdapterTest.swift in Sources */,
+				A645291E244CDEB700C1A47A /* TestExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1580,6 +1598,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6452922244CDF7D00C1A47A /* SignUpIntegrationTest.swift in Sources */,
+				A645291A244CDE2D00C1A47A /* AddAccountSpy.swift in Sources */,
+				A645291B244CDE8700C1A47A /* TestExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2457,6 +2478,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9P8XGQ8AX9;
 				INFOPLIST_FILE = MainTests/Info.plist;
@@ -2468,6 +2490,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.MainTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MainTests/MainTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Main.app/Main";
@@ -2479,6 +2503,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9P8XGQ8AX9;
 				INFOPLIST_FILE = MainTests/Info.plist;
@@ -2490,6 +2515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io-ytm-.MainTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MainTests/MainTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Main.app/Main";

@@ -158,14 +158,6 @@ class SingnUpPresenterTest: XCTestCase {
           wait(for: [exp], timeout: 1)
           
       }
-    
-    
-
-    func checkMemoryLeak2(for instance: AnyObject, file: StaticString = #file, line: UInt = #line){
-        addTeardownBlock {[weak instance ] in
-            XCTAssertNil(instance,file: file , line: line)
-        }
-    }
 }
 
 
@@ -173,7 +165,7 @@ extension SingnUpPresenterTest{
     
     func makeSut(alertView: AlertViewSpy = AlertViewSpy() , emailValidator:EmailValidatorSpy = EmailValidatorSpy(),addAccount: AddAccountSpy = AddAccountSpy(),loadingView: LoadingViewSpy = LoadingViewSpy(),file: StaticString = #file, line: UInt = #line) -> SignUpPresenter{
         let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount, loadingView: loadingView)
-        checkMemoryLeak2(for: sut,file: file , line: line)
+        checkMemoryLeak(for: sut,file: file , line: line)
         return (sut)
     }
     
