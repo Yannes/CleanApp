@@ -78,7 +78,6 @@
 		A6BF7E9D244C210100D23903 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7E42244C1B9E00D23903 /* Validation.framework */; };
 		A6BF7E9E244C210100D23903 /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7E42244C1B9E00D23903 /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A6BF7EA5244C217D00D23903 /* SingupFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7EA4244C217D00D23903 /* SingupFactory.swift */; };
-		A6BF7EA9244C26D400D23903 /* TesteVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7EA8244C26D400D23903 /* TesteVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -358,7 +357,6 @@
 		A6BF7E79244C203000D23903 /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BF7E7F244C203000D23903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6BF7EA4244C217D00D23903 /* SingupFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingupFactory.swift; sourceTree = "<group>"; };
-		A6BF7EA8244C26D400D23903 /* TesteVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -816,7 +814,6 @@
 			children = (
 				A6BF7DFF244A709100D23903 /* SignUpViewController.swift */,
 				A6BF7E01244A70B000D23903 /* SignUp.storyboard */,
-				A6BF7EA8244C26D400D23903 /* TesteVIew.swift */,
 			);
 			path = SingUp;
 			sourceTree = "<group>";
@@ -1524,7 +1521,6 @@
 			files = (
 				A6BF7E0E244AA7EB00D23903 /* StoryBoarderded.swift in Sources */,
 				A6BF7E0C244AA6C800D23903 /* UIViewControllerExtension.swift in Sources */,
-				A6BF7EA9244C26D400D23903 /* TesteVIew.swift in Sources */,
 				A6BF7E00244A709100D23903 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
