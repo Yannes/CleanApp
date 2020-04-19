@@ -8,42 +8,30 @@
 
 import XCTest
 import PresentationLayer
-
-
-public final class EmailValidatorAdapter: EmailValidator {
-    
-    private let patteern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    
-   public func isValid(email: String) -> Bool {
-        let range = NSRange(location: 0, length: email.utf16.count)
-        let rangex = try! NSRegularExpression(pattern: patteern)
-        return rangex.firstMatch(in: email, options: [], range: range) != nil
-        
-    }
-}
-
-
-
-
+import Validation
 
 class EmailValidatorAdapterTest: XCTestCase {
 
     func test_invalid_emails() throws {
-        let sut = EmailValidatorAdapter()
+        let sut = makeSut()
         XCTAssertFalse(sut.isValid(email: "rr"))
         XCTAssertFalse(sut.isValid(email: "rr@"))
         XCTAssertFalse(sut.isValid(email: "rr@rr"))
         XCTAssertFalse(sut.isValid(email: "rr@rr."))
         XCTAssertFalse(sut.isValid(email: "@rr.com"))
     }
+    
+    func test_valid_emails() throws {
+        let sut = makeSut()
+        XCTAssertTrue(sut.isValid(email: "yannes@gmail.com"))
+        XCTAssertTrue(sut.isValid(email: "yannes@hotmail.com"))
+        XCTAssertTrue(sut.isValid(email: "yannes@terra.com.br"))
+    }
 }
 
 
-//
-//[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}
-//
-//
-//func validateEmail(candidate: String) -> Bool {
-// let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-// return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
-//}
+extension EmailValidatorAdapterTest{
+    func makeSut() -> EmailValidatorAdapter{
+        return EmailValidatorAdapter()
+    }
+}

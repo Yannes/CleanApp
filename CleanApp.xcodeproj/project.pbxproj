@@ -60,6 +60,7 @@
 		A6BF7E50244C1B9F00D23903 /* EmailValidatorAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7E4F244C1B9F00D23903 /* EmailValidatorAdapterTest.swift */; };
 		A6BF7E59244C1C2200D23903 /* PresentationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7DA12447A79500D23903 /* PresentationLayer.framework */; };
 		A6BF7E5A244C1C2200D23903 /* PresentationLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6BF7DA12447A79500D23903 /* PresentationLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A6BF7E5F244C1F5100D23903 /* EmailValidatorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7E5E244C1F5100D23903 /* EmailValidatorAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +265,7 @@
 		A6BF7E4A244C1B9F00D23903 /* ValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BF7E4F244C1B9F00D23903 /* EmailValidatorAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterTest.swift; sourceTree = "<group>"; };
 		A6BF7E51244C1B9F00D23903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6BF7E5E244C1F5100D23903 /* EmailValidatorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -745,6 +747,7 @@
 		A6BF7E43244C1B9E00D23903 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				A6BF7E5E244C1F5100D23903 /* EmailValidatorAdapter.swift */,
 				A6BF7E45244C1B9E00D23903 /* Info.plist */,
 			);
 			path = Validation;
@@ -1086,6 +1089,7 @@
 					};
 					A6BF7E41244C1B9E00D23903 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 					A6BF7E49244C1B9F00D23903 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -1323,6 +1327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6BF7E5F244C1F5100D23903 /* EmailValidatorAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2023,6 +2028,7 @@
 		A6BF7E53244C1B9F00D23903 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -2043,6 +2049,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2050,6 +2057,7 @@
 		A6BF7E54244C1B9F00D23903 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -2077,6 +2085,7 @@
 		A6BF7E55244C1B9F00D23903 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9P8XGQ8AX9;
@@ -2098,6 +2107,7 @@
 		A6BF7E56244C1B9F00D23903 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9P8XGQ8AX9;
