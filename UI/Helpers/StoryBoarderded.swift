@@ -17,7 +17,7 @@ public protocol StoryBoarderded{
 
 extension StoryBoarderded where Self: UIViewController{
     
-    static func instantiate() -> Self{
+    public static func instantiate() -> Self{
         let vcName = String(describing: self)
         let sbName = vcName.components(separatedBy: "ViewController")[0]
         let bundle = Bundle(for: Self.self)

@@ -11,7 +11,7 @@ import UIKit
 import PresentationLayer
 
 
-final class SignUpViewController:UIViewController, StoryBoarderded {
+public final class SignUpViewController:UIViewController, StoryBoarderded {
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var saveButton: UIButton!
@@ -21,9 +21,9 @@ final class SignUpViewController:UIViewController, StoryBoarderded {
     @IBOutlet weak var confirmarSenhaTextField: UITextField!
     
     
-    var signUp: ((SignUpViewModel)-> Void)?
+   public  var signUp: ((SignUpViewModel)-> Void)?
     
-    override func viewDidLoad() {
+   public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
@@ -46,7 +46,7 @@ final class SignUpViewController:UIViewController, StoryBoarderded {
 
 
 extension SignUpViewController: LoadingView{
-    func display(viewModel: LoadingViewModel) {
+  public  func display(viewModel: LoadingViewModel) {
         if viewModel.isLoading {
             view.isUserInteractionEnabled = false
             loadingIndicator.startAnimating()
@@ -61,7 +61,7 @@ extension SignUpViewController: LoadingView{
 
 
 extension SignUpViewController: AlertView{
-    func showMessage(viewModel: AlertViewModel) {
+  public  func showMessage(viewModel: AlertViewModel) {
         let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alert, animated: true)
