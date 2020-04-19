@@ -14,9 +14,19 @@ import Infra
 
 
 final class UseCaseFactory {
+    
+    
+  private static let httpClient = AlamofireAdapter()
+    private static let apiBaseUrl = Enviroment.variable(.apiBaseUrl)
+   
+    
+    private static func makeUrl(path:String) -> URL{
+        return URL(string: "\(apiBaseUrl)/\(path)")!
+    }
+    
+    
+    
  public static func makeRemoteAddAccount() -> AddAccount{
-        let alamofireAdapter = AlamofireAdapter()
-        let url = URL(string: "https://clean-node-api.herokuapp.com/api/signup")!
-        return RemoteAddAccount(url: url, httpClient: alamofireAdapter)
+        return RemoteAddAccount(url: makeUrl(path: "signup"), httpClient: httpClient)
     }
 }
