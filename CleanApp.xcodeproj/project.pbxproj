@@ -24,10 +24,11 @@
 		A645291E244CDEB700C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
 		A645291F244CDEB900C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
 		A6452920244CDEBB00C1A47A /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3E2440171400B927B3 /* TestExtension.swift */; };
-		A6452922244CDF7D00C1A47A /* SignUpIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452921244CDF7D00C1A47A /* SignUpIntegrationTest.swift */; };
+		A6452922244CDF7D00C1A47A /* SignUpComposerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452921244CDF7D00C1A47A /* SignUpComposerTest.swift */; };
 		A6452924244CDFAE00C1A47A /* MainTests-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = A6452923244CDFAE00C1A47A /* MainTests-Bridging-Header.h */; };
 		A6452927244CF2C200C1A47A /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6452926244CF2C200C1A47A /* WeakVarProxy.swift */; };
 		A645292C244D14E900C1A47A /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A645292B244D14E900C1A47A /* Enviroment.swift */; };
+		A645292E244D4DF700C1A47A /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF7DDC244A689200D23903 /* TestFactories.swift */; };
 		A655FF37243E957E00B927B3 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF36243E957E00B927B3 /* DomainError.swift */; };
 		A655FF39243E981300B927B3 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF38243E981300B927B3 /* HttpError.swift */; };
 		A655FF3C243FFE4C00B927B3 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655FF3B243FFE4C00B927B3 /* ExtensionHelpers.swift */; };
@@ -312,7 +313,7 @@
 		A6378409243E809B005B7BFF /* HttpPostCLient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostCLient.swift; sourceTree = "<group>"; };
 		A6452912244CDB0200C1A47A /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		A6452915244CDB8A00C1A47A /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
-		A6452921244CDF7D00C1A47A /* SignUpIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTest.swift; sourceTree = "<group>"; };
+		A6452921244CDF7D00C1A47A /* SignUpComposerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposerTest.swift; sourceTree = "<group>"; };
 		A6452923244CDFAE00C1A47A /* MainTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6452926244CF2C200C1A47A /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		A6452929244D140900C1A47A /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -647,6 +648,14 @@
 			path = Env;
 			sourceTree = "<group>";
 		};
+		A645292D244D492300C1A47A /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				A6452921244CDF7D00C1A47A /* SignUpComposerTest.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
 		A655FF35243E957000B927B3 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -940,7 +949,7 @@
 		A6BF7E7C244C203000D23903 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6452921244CDF7D00C1A47A /* SignUpIntegrationTest.swift */,
+				A645292D244D492300C1A47A /* Composers */,
 				A6452923244CDFAE00C1A47A /* MainTests-Bridging-Header.h */,
 				A6BF7E7F244C203000D23903 /* Info.plist */,
 			);
@@ -1622,8 +1631,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6452922244CDF7D00C1A47A /* SignUpIntegrationTest.swift in Sources */,
+				A6452922244CDF7D00C1A47A /* SignUpComposerTest.swift in Sources */,
 				A645291A244CDE2D00C1A47A /* AddAccountSpy.swift in Sources */,
+				A645292E244D4DF700C1A47A /* TestFactories.swift in Sources */,
 				A645291B244CDE8700C1A47A /* TestExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
