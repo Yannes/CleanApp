@@ -110,7 +110,7 @@ extension SingnUpPresenterTest{
     
     
     func makeAccountModel() -> AccountModel{
-       return AccountModel(id: "any_account", name: "Any_name", email: "any_email@hotmail.com", password: "any_password")
+       return AccountModel(accessToken: "any_token")
     }
     
      func makeAddAccountModel() -> AddAccountModel{
