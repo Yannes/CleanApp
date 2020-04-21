@@ -37,6 +37,14 @@ class RemoteAddAccountTest: XCTestCase {
             httpClientSpy.completeWithError(.noConnectivity)
         })
     }
+   
+    
+    func test_add_should_complete_with_email_in_use_error_if_client_complete_with_forbidden() {
+           let (sut,httpClientSpy) = makeSut()
+        expect(sut, completeWith: .failure(.emailInuse), when: {
+            httpClientSpy.completeWithError(.forbidden)
+           })
+       }
     
     
     func test_add_should_complete_with_account_if_client_Completes_with_valid_data() {
@@ -55,6 +63,7 @@ class RemoteAddAccountTest: XCTestCase {
             httpClientSpy.completeWithData(makeInvalidData())
         })
     }
+
     
     
     func test_add_should_not_complete_if_sut_has_been_dealllocated() {
