@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import PresentationLayer
+import Validation
 
 
 class EmailValidatorSpy: EmailValidator{

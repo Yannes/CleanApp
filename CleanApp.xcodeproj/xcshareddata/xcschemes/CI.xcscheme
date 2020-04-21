@@ -76,6 +76,20 @@
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A6BF7E41244C1B9E00D23903"
+               BuildableName = "Validation.framework"
+               BlueprintName = "Validation"
+               ReferencedContainer = "container:CleanApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -130,6 +144,16 @@
                BlueprintIdentifier = "A655FF532440CAD200B927B3"
                BuildableName = "InfraTests.xctest"
                BlueprintName = "InfraTests"
+               ReferencedContainer = "container:CleanApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A6BF7E78244C203000D23903"
+               BuildableName = "MainTests.xctest"
+               BlueprintName = "MainTests"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
