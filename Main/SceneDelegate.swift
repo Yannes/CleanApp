@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UI
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,8 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let httpClient = makeAlamoFireAdapter()
         let addAcount = makeRemoteAddAccount(httpClient: httpClient)
+        let signUpController = makeSignUpController(addAccount:addAcount)
+        let nav = NavigationController(rootViewController: signUpController )
         
-        window?.rootViewController = makeSignUpController(addAccount:addAcount)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 }
