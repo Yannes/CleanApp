@@ -28,7 +28,7 @@ class SignUpComposerTest: XCTestCase {
     
     func test_signUp_compose_with_correct_validations(){
         
-        let validations = SignUpComposer.makeValidation()
+        let validations = makesignUpValidation()
         XCTAssertEqual(validations[0] as! RequiredFieldValidation, RequiredFieldValidation(fieldName: "name", fieldLabel: "Nome"))
         XCTAssertEqual(validations[1] as! RequiredFieldValidation, RequiredFieldValidation(fieldName: "email", fieldLabel: "Email"))
         XCTAssertEqual(validations[2] as! EmailValidation, EmailValidation(fieldName: "email", fieldLabel: "Email", emailValidator: EmailValidatorSpy()))
@@ -38,11 +38,10 @@ class SignUpComposerTest: XCTestCase {
     }
 }
 
-
 extension SignUpComposerTest{
     func makeSut(file: StaticString = #file, line: UInt = #line) ->(sut: SignUpViewController, addAccountSpy:AddAccountSpy){
       let addAccountSpy = AddAccountSpy()
-      let sut = SignUpComposer.composeControllerWith(addAccount:  MainQueueDispatchDecorator(addAccountSpy))
+      let sut = makeSignUpController(addAccount:  MainQueueDispatchDecorator(addAccountSpy))
       checkMemoryLeak(for: sut, file: file, line: line)
       checkMemoryLeak(for: addAccountSpy,file: file, line: line)
       return (sut, addAccountSpy)
