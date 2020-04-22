@@ -12,12 +12,12 @@ import Infra
 import Domain
 
 class UseCasesIntegrationTests: XCTestCase {
-
+    
     func test_add_account() throws {
         let alamofireAdapter = AlamofireAdapter()
         let url = URL(string: "https://fordevs.herokuapp.com/api/signup")!
         let sut = RemoteAddAccount(url: url, httpClient: alamofireAdapter)
-        let addAccountModel = AddAccountModel(name: "Yannes Meneguelli", email: "yannes_2meneguelli@hotmail.com", password: "secret", passwordConfirmation: "secret")
+        let addAccountModel = AddAccountModel(name: "Yannes Meneguelli", email: "\(UUID().uuidString)@hotmail.com", password: "secret", passwordConfirmation: "secret")
         let exp = expectation(description: "Waiting")
         sut.add(addAccountModel: addAccountModel) { result in
             switch result{
@@ -28,6 +28,18 @@ class UseCasesIntegrationTests: XCTestCase {
             exp.fulfill()
         }
         wait(for: [exp], timeout: 5)
+        
+        let exp2 = expectation(description: "Waiting")
+        sut.add(addAccountModel: addAccountModel) { result in
+            switch result{
+            case .failure(let error) where error == .emailInuse:
+                    XCTAssertNotNil(error)
+            default:
+                XCTFail("Expected sucess got \(result) instead")
+            }
+            exp2.fulfill()
+        }
+        wait(for: [exp2], timeout: 5)
     }
 
     
