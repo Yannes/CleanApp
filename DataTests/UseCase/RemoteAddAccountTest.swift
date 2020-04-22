@@ -88,7 +88,7 @@ extension RemoteAddAccountTest{
     }
     
     
-    func expect(_ sut:RemoteAddAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: () -> Void, file: StaticString = #file, line: UInt = #line){
+    func expect(_ sut:RemoteAddAccount, completeWith expectedResult: AddAccount.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line){
 
         let exp = expectation(description: "waiting")
         sut.add(addAccountModel: makeAddAccountModel()) { receivedResult in
